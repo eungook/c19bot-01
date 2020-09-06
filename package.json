@@ -13,7 +13,7 @@
     "xml2js": "^0.4.23"
   },
   "scripts": {
-    "test": "jest tweet.test.js --verbose --setupFiles dotenv/config"
+    "test": "jest openapi.test.js --verbose --setupFiles dotenv/config"
   },
   "jest": {
     "setupFiles": ["dotenv/config"]
