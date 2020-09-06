@@ -5,9 +5,17 @@
   "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^18.0.5",
+    "@types/jest": "^26.0.13",
+    "dotenv": "^8.2.0",
     "jest": "^26.4.2",
     "node-fetch": "^2.6.1",
     "twitter-lite": "^0.14.0",
     "xml2js": "^0.4.23"
+  },
+  "scripts": {
+    "test": "jest --watchAll --verbose --setupFiles dotenv/config"
+  },
+  "jest": {
+    "setupFiles": ["dotenv/config"]
   }
 }
