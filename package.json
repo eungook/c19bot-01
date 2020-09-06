@@ -1,0 +1,13 @@
+{
+  "name": "c19bot-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^18.0.5",
+    "jest": "^26.4.2",
+    "node-fetch": "^2.6.1",
+    "twitter-lite": "^0.14.0",
+    "xml2js": "^0.4.23"
+  }
+}
