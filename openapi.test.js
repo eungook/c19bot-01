@@ -1,5 +1,5 @@
+require('dotenv').config();
 const openapi = require('./openapi');
-require('dotenv').config({ path: './test.env' });
 
 describe('openapi', () => {
   describe('조회', () => {
