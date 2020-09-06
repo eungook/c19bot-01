@@ -8,6 +8,6 @@ describe('openapi', () => {
       const date = new Date('2020-09-06');
       const newDecideCnt = await openapi.init(serviceKey).getNewDecideCnt(date);
       expect(newDecideCnt).toBeGreaterThan(0);
-    });
+    }, 10000);
   });
 });
