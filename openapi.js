@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fetch = require('node-fetch');
 const { parseString } = require('xml2js');
 const { getYYYYMMDD } = require('./util');
@@ -5,9 +6,8 @@ const { getYYYYMMDD } = require('./util');
 /**
  * OpenAPI와의 통신을 준비합니다.
  */
-function init(serviceKey) {
+function init() {
   const obj = {
-    serviceKey,
     getNewDecideCnt,
   };
 
@@ -19,11 +19,11 @@ function init(serviceKey) {
  * @param date 조회할 날짜. Date 타입
  */
 async function getNewDecideCnt(date) {
-  const decideCnt1 = await getDecideCnt(date, this.serviceKey);
+  const decideCnt1 = await getDecideCnt(date);
   
   const day = 1000 * 60 * 60 * 24; // millisecond * second * minute * hour
   const dayAgo = new Date(date.getTime() - day); // 하루 전 날
-  const decideCnt2 = await getDecideCnt(dayAgo, this.serviceKey);
+  const decideCnt2 = await getDecideCnt(dayAgo);
 
   const newDecideCnt = decideCnt1 - decideCnt2;
   return newDecideCnt;
@@ -32,13 +32,13 @@ async function getNewDecideCnt(date) {
 /**
  * 공공데이터포털 오픈 API에서 조회한 누적 확진자 수를 리턴한다.
  * @param date 조회할 날짜. Date 타입
- * @param serviceKey 오픈 API 서비스 키
  */
-async function getDecideCnt(date, serviceKey) {
+async function getDecideCnt(date) {
+  const SERVICE_KEY = process.env.OPEN_API_SERVICE_KEY;
   const createDt = getYYYYMMDD(date);
 
   const url = `http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson` +
-    `?serviceKey=${serviceKey}` +
+    `?serviceKey=${SERVICE_KEY}` +
     `&startCreateDt=${createDt}` +
     `&endCreateDt=${createDt}`;
   const decideCnt = await fetch(url)
