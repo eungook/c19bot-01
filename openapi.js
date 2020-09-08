@@ -48,12 +48,7 @@ async function getDecideCnt(date) {
       console.log({ createDt, xml });
       parseString(xml, (err, result) => decideCnt = Number(result.response.body[0].items[0].item[0].decideCnt[0]));
       return decideCnt;
-    })
-    .catch(e => {
-      console.log({ e });
-      return NaN;
     });
-
   
   return decideCnt;
 };
