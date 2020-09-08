@@ -10,4 +10,16 @@ function getYYYYMMDD(date) {
   return yyyymmdd;
 }
 
-module.exports = { getYYYYMMDD };
+/**
+ * Date의 값을 KST로 변환한다.
+ * (Timezone은 변환되지 않는다.)
+ * @param date 
+ */
+function getKSTDate(date) {
+  const timezone = date.getTimezoneOffset() / 60;
+  const hour = 1000 * 60 * 60;
+  const kst = new Date(date.getTime() + ((timezone + 9) * hour)); // KST = GMT+9
+  return kst;
+}
+
+module.exports = { getYYYYMMDD, getKSTDate };
