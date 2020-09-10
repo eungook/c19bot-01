@@ -4,6 +4,8 @@
 name: unit test (by jest)
 
 on:
+  schedule:
+    - cron: '0 */3 * * *'
   workflow_dispatch:
   pull_request:
     branches: [ master ]
