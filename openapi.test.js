@@ -7,6 +7,6 @@ describe('openapi', () => {
       const newDecideCnt = await openapi.init().getNewDecideCnt(date);
       console.log({ newDecideCnt });
       expect(newDecideCnt).toBeGreaterThan(0);
-    }, 10000); // 10000: github actions에서 timeout나지 않도록
+    }, 30000); // 30000: github actions에서 timeout나지 않도록
   });
 });
