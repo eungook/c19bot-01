@@ -50,4 +50,4 @@ function getKSTDate(date) {
   return kst;
 }
 
-module.exports = { getYYYYMMDD, getKSTDate };
+module.exports = { getYYYYMMDD, getKSTDate, destructDate };
