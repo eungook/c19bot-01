@@ -48,7 +48,6 @@ async function getDecideCnt(date) {
     .then(response => response.text())
     .then(xml => {
       let decideCnt;
-      console.log({ createDt, xml });
       parseString(xml, (err, result) => decideCnt = Number(result.response.body[0].items[0].item[0].decideCnt[0]));
       return decideCnt;
     })
