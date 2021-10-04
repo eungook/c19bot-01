@@ -6,8 +6,8 @@ name: tweet
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'
     # UTC 03:00 = KST 12:00
+    - cron: '0 3 * * *'
     
 jobs:
   build:

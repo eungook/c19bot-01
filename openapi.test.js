@@ -8,7 +8,7 @@ describe('openapi', () => {
       const newDecideCnt = await openapi.init().getNewDecideCnt(date);
       console.log({ date, newDecideCnt });
       expect(newDecideCnt).toBeTruthy()
-    }, 10000); // 10000: github actions에서 timeout나지 않도록
+    }, 30000); // 30000: github actions에서 timeout나지 않도록
 
     const now = new Date();
     let kst = getKSTDate(now);
@@ -23,6 +23,6 @@ describe('openapi', () => {
       const newDecideCnt = await openapi.init().getNewDecideCnt(kst);
       console.log({ kst, newDecideCnt });
       expect(newDecideCnt).toBeTruthy();
-    }, 10000); // 10000: github actions에서 timeout나지 않도록
+    }, 30000); // 30000: github actions에서 timeout나지 않도록
   });
 });
