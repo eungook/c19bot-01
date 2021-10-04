@@ -25,7 +25,7 @@ async function getNewDecideCnt(date) {
   const dayAgo = new Date(date.getTime() - day); // 하루 전 날
   const decideCnt2 = await getDecideCnt(dayAgo);
 
-  const newDecideCnt = decideCnt1 - decideCnt2;
+  const newDecideCnt = new Intl.NumberFormat().format(decideCnt1 - decideCnt2)
   return newDecideCnt;
 }
 
