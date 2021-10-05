@@ -6,9 +6,8 @@
  * @param {Date} date
  */
 function getKST(date) {
-	const timezone = date.getTimezoneOffset() / 60;
 	const hour = 1000 * 60 * 60;
-	const kst = new Date(date.getTime() + ((timezone + 9) * hour)); // KST = UTC+09:00
+	const kst = new Date(date.getTime() + (9 * hour)); // KST = UTC+09:00
 	return kst;
 }
 
