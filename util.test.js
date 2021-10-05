@@ -1,20 +1,19 @@
-const util = require('./util');
+const { destructDate, destructDateUTC } = require('./util');
 
 describe('util.js', () => {
-  describe('getYYYYMMDD()', () => {
-    it('2020-09-07.', () => {
-      const date = new Date('2020-09-07');
-      const yyyymmdd = util.getYYYYMMDD(date);
-      expect(yyyymmdd).toBe('20200907');
-    });
+  it('destructDate()', () => {
+    const date = new Date('2021-12-31');
+    const { yyyy, m, d } = destructDate(date);
+    expect(yyyy).toBe(2021);
+    expect(m).toBe(12);
+    expect(d).toBe(31);
   });
 
-  describe('getKSTDate()', () => {
-    it('2020-01-01 00:00:00', () => {
-      const utc = new Date(Date.UTC(2020, 1, 1, 0, 0, 0, 0));
-      const kst = util.getKSTDate(utc);
-      expect(kst.getDate()).toBe(1);
-      expect(kst.getHours()).toBe(9);
-    });
+  it('destructDateUTC()', () => {
+    const date = new Date('2021-12-31T00:00:00.000Z');
+    const { yyyy, m, d } = destructDateUTC(date);
+    expect(yyyy).toBe(2021);
+    expect(m).toBe(12);
+    expect(d).toBe(31);
   });
 });
