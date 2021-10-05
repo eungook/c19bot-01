@@ -6,8 +6,8 @@ const { getKSTHours } = require('./kst-date');
 
 /**
  * 현재 시각 기준 오픈 API에서 조회할 수 있는 최신 데이터 날짜를 계산한다.
- * 참고: 데이터는 보통 KST 기준 오전 10시 이후에 갱신된다.
  * @see [공공데이터활용지원센터_보건복지부 코로나19 감염 현황 - 공공데이터포털](https://www.data.go.kr/data/15043376/openapi.do)
+ * @see 데이터는 보통 KST 기준 오전 10시 이후에 갱신된다.
  * @returns {Date}
  */
 function getNewDecideCntDate() {
