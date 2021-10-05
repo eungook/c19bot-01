@@ -23,7 +23,7 @@ function getKSTFullYear(date) {
 }
 
 /**
- * getKSTMonth()는 지정된 날짜의 월을 0부터 시작하는 값 (0은 첫 해를 나타냄)으로 표준시에 따라 반환합니다.
+ * getKSTMonth()는 지정된 날짜의 월을 0부터 시작하는 값 (0은 첫 해를 나타냄)으로 KST에 따라 반환합니다.
  * @see [참고: Date.prototype.getUTCMonth()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMonth)
  * @param {Date} date
  */
@@ -53,7 +53,7 @@ function getKSTDay(date) {
 }
 
 /**
- * getKSTHours() 메서드는 표준시에 따라 지정된 날짜의 시간을 반환합니다.
+ * getKSTHours() 메서드는 KST에 따라 지정된 날짜의 시간을 반환합니다.
  * @see [참고: Date.prototype.getUTCHours()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCHours)
  * @param {Date} date
  */
@@ -63,7 +63,7 @@ function getKSTHours(date) {
 }
 
 /**
- * getKSTMinutes() 메서드는 표준시에 따라 지정된 날짜의 분을 반환합니다.
+ * getKSTMinutes() 메서드는 KST에 따라 지정된 날짜의 분을 반환합니다.
  * @see [참고: Date.prototype.getUTCMinutes()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMinutes)
  * @param {Date} date
  */
@@ -73,7 +73,7 @@ function getKSTMinutes(date) {
 }
 
 /**
- * getKSTSeconds() 메서드는 표준시에 따라 지정된 날짜의 초를 반환합니다.
+ * getKSTSeconds() 메서드는 KST에 따라 지정된 날짜의 초를 반환합니다.
  * @see [참고: Date.prototype.getUTCSeconds()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCSeconds)
  * @param {Date} date
  */
