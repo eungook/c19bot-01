@@ -18,7 +18,7 @@ function getNewDecideCntDate() {
     return today;
 
   } else {
-    const day = (24 * 60 * 60); // h * m * s
+    const day = (24 * 60 * 60 * 1000); // h * m * s * ms
     const yesterday = new Date(today.getTime() - day);
     return yesterday;
   }
