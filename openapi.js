@@ -1,7 +1,7 @@
 require('dotenv').config();
 const fetch = require('node-fetch');
 const { parseString } = require('xml2js');
-const { destructDate } = require('./util');
+const { formatDate } = require('./util');
 const { getKSTHours } = require('./kst-date');
 
 /**
@@ -47,8 +47,7 @@ async function getNewDecideCnt(date) {
  */
 async function getDecideCnt(date) {
   const SERVICE_KEY = process.env.OPEN_API_SERVICE_KEY;
-  const { yyyy, mm, dd } = destructDate(date);
-  const createDt = `${yyyy}${mm}${dd}`;
+  const createDt = formatDate(date, 'yyyymmdd');
 
   const url =
     `http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson` +
