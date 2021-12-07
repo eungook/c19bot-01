@@ -34,12 +34,6 @@ function destructDate(date) {
  * @returns {string} 포매팅된 날짜
  */
 function formatDate(date, format) {
-  console.log({
-    where: 'formatDate()',
-    date,
-    format,
-  });
-
   const d = destructDate(date);
   return format
     .replaceAll('yyyy', d.yyyy)
